@@ -1,5 +1,5 @@
 {
-  "name": "board3r/rakuken",
+  "name": "board3r/RakutenSdk",
   "description": "A PHP SDK to wrap the Rakuten's France API. This enables you to develop a fast, flexible and custom integration for your existing e-commerce solution.",
   "keywords": [
     "sdk",
