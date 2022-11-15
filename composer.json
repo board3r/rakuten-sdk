@@ -8,7 +8,7 @@
   ],
   "type": "library",
   "version": "1.0.0-alpha",
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "license": "GPL-3.0-or-later",
   "authors": [
     {
