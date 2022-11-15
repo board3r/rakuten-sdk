@@ -5,7 +5,7 @@
  *
  */
 
-namespace Tests;
+namespace RakutenSDK\Tests;
 
 use RakutenSDK\Client;
 use PHPUnit\Framework\TestCase;
