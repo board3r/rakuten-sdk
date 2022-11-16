@@ -2,7 +2,7 @@
 
 namespace RakutenSDK\Core\Client;
 
-use Cake\I18n\FrozenTime;
+use DateTime;
 use RakutenSDK\Core\Utility\Functions;
 use GuzzleHttp;
 use RakutenSDK\Core\Domain\ArrayableInterface;
@@ -317,7 +317,7 @@ abstract class AbstractApiClient implements ApiClientInterface
     private function formatQueryParams(array $params): array
     {
         foreach ($params as $key => $value) {
-            if ($value instanceof FrozenTime) {
+            if ($value instanceof DateTime) {
                 $value = Functions::dateFormat($value);
             } elseif (is_array($value)) {
                 if (Functions::arrayIsAssoc($value)) {

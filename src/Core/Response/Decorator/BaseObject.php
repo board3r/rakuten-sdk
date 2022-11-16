@@ -41,12 +41,24 @@ class BaseObject implements ResponseDecoratorInterface
             if (isset($data['request'])){
                 $dataRequest = $data['request'];
             }
+            if (isset($data['response']['status'])){
+                $status = $data['response']['status'];
+            }
+            if (isset($data['response']['lastversion'])){
+                $lastversion = $data['response']['lastversion'];
+            }
             $keys = explode('.', $this->key);
             foreach ($keys as $k) {
                 $data = $data[$k];
             }
             if (isset($dataRequest)){
                 $data['request'] = $dataRequest;
+            }
+            if (isset($status)){
+                $data['status'] = $status;
+            }
+            if (isset($lastversion)){
+                $data['lastversion'] = $lastversion;
             }
         }
 

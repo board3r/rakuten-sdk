@@ -2,15 +2,15 @@
 
 namespace RakutenSDK\Domain\Import;
 
-use Cake\I18n\FrozenTime;
+use DateTime;
 use RakutenSDK\Core\Domain\BaseObject;
 use RakutenSDK\Domain\Import\Collection\ReportImageErrorListCollection;
 
 /**
  * @method  string  getFilename()
  * @method  string  geStatus()
- * @method  FrozenTime  getUploadDate()
- * @method  FrozenTime  getProcessDate()
+ * @method  DateTime  getUploadDate()
+ * @method  DateTime  getProcessDate()
  * @method  int  getTotalLines()
  * @method  int  getProcessedLines()
  * @method  int  getErrorLines()

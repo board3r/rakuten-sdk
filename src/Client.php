@@ -12,6 +12,7 @@ use GuzzleHttp\Middleware;
 use RakutenSDK\Domain\Import\Import;
 use RakutenSDK\Domain\Import\Report;
 use RakutenSDK\Domain\Shipping\ShippingTypes;
+use RakutenSDK\Domain\Stock\Category;
 use RakutenSDK\Domain\Stock\Collection\CategoryCollection;
 use RakutenSDK\Domain\Stock\Export;
 use RakutenSDK\Domain\Stock\Listing;
@@ -34,7 +35,7 @@ use RakutenSDK\Request\Stock\GetProductTypeTemplateRequest;
  * @method ShippingTypes|Response getShippingTypes(GetShippingTypesRequest $request)
  * @method Export|Response getExport(GetExportRequest $request)
  * @method Listing|Response getListing(GetListingRequest $request)
- * @method CategoryCollection|Response getCategories(GetCategoriesRequest $request)
+ * @method Category|Response getCategories(GetCategoriesRequest $request)
  * @method SaleCollection|Response getNewSales(GetNewSalesRequest $request)
  */
 class Client extends AbstractApiClient

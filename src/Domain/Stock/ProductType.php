@@ -9,7 +9,7 @@ use RakutenSDK\Core\Domain\LastVersionTrait;
  * @method  string  getAlias()
  * @method  string  getLabel()
  * @method  string  getCategoryRef()
- * @method  \Cake\I18n\FrozenTime  getUpdateDate()
+ * @method  \DateTime  getUpdateDate()
  */
 class ProductType extends BaseObject
 {

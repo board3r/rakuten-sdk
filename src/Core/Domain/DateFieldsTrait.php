@@ -5,7 +5,7 @@ namespace RakutenSDK\Core\Domain;
 trait DateFieldsTrait
 {
     /**
-     * The following fields will be converted to FrozenTime object if specified as string
+     * The following fields will be converted to DateTime object if specified as string
      *
      * @var array
      */

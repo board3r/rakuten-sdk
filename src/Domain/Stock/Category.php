@@ -9,7 +9,7 @@ use RakutenSDK\Domain\Stock\Collection\CategoryCollection;
 /**
  * @method  string  getCode()
  * @method  bool  hasCategories()
- * @method  string  getCategories()
+ * @method  CategoryCollection  getCategories()
  */
 class Category extends BaseObject
 {

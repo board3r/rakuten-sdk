@@ -1,8 +1,8 @@
 <?php
+
 namespace RakutenSDK\Core\Domain;
 
-use Cake\I18n\FrozenTime;
-use Cake\Utility\Inflector;
+use DateTime;
 use RakutenSDK\Core\Utility\Functions;
 use InvalidArgumentException;
 use JetBrains\PhpStorm\Pure;
@@ -17,6 +17,11 @@ trait DataObjectTrait
      */
     protected array $data = [];
 
+    protected function delimit($string)
+    {
+        return mb_strtolower(preg_replace('/(?<=\\w)([A-Z])/', '_\\1', $string));
+    }
+
     /**
      * Set/Get attribute wrapper
      *
@@ -26,7 +31,7 @@ trait DataObjectTrait
      */
     public function __call(string $method, array $args)
     {
-        $key = Inflector::delimit(substr($method, 3));
+        $key = $this->delimit(substr($method, 3));
         switch (strtolower(substr($method, 0, 3))) {
             case 'get':
                 return $this->getData($key);
@@ -40,7 +45,7 @@ trait DataObjectTrait
 
         // Handle boolean check on keys
         if (str_starts_with($method, 'is')) {
-            return (bool) $this->getData(Inflector::delimit(substr($method, 2)));
+            return (bool)$this->getData($this->delimit(substr($method, 2)));
         }
 
         throw new InvalidArgumentException(
@@ -61,7 +66,7 @@ trait DataObjectTrait
     /**
      * Useful method to create object quickly
      *
-     * @param   array   $data
+     * @param array $data
      * @return  $this
      */
     public static function create(array $data = []): static
@@ -161,7 +166,7 @@ trait DataObjectTrait
         foreach ($this->data as $key => $value) {
             if (is_float($value)) {
                 $value = sprintf('%.5F', $value);
-            } elseif ($value instanceof FrozenTime) {
+            } elseif ($value instanceof DateTime) {
                 $value = Functions::dateFormat($value);
             } elseif ($value instanceof ArrayableInterface) {
                 if ($value->isEmpty()) {
@@ -210,9 +215,9 @@ trait DataObjectTrait
     /**
      * Loop through current object data and apply a callback function on each value
      *
-     * @param   callable    $callback
-     * @param   array       $keys
-     * @param   array       $args
+     * @param callable $callback
+     * @param array $keys
+     * @param array $args
      * @param bool $notNull
      * @return  array
      */

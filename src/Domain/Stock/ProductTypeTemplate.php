@@ -8,7 +8,7 @@ use RakutenSDK\Core\Domain\BaseObject;
 /**
  * @method  string  getAlias()
  * @method  string  getLabel()
- * @method  \Cake\I18n\FrozenTime  getUpdateDate()
+ * @method  DateTime  getUpdateDate()
  * @method  ProductTypeTemplateAttributes getAttributes()
  */
 class ProductTypeTemplate extends BaseObject

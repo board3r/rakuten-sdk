@@ -2,7 +2,7 @@
 
 namespace RakutenSDK\Core\Utility;
 
-use Cake\I18n\FrozenTime;
+use DateTime;
 use RakutenSDK\Core\Domain\FileWrapper;
 use DateTimeInterface;
 use DateTimeZone;
@@ -181,10 +181,10 @@ class Functions
     }
 
     /**
-     * @param FrozenTime $date
+     * @param DateTime $date
      * @return  string
      */
-    public static function dateFormat(FrozenTime $date): string
+    public static function dateFormat(DateTime $date): string
     {
         return $date->setTimezone(new DateTimeZone('GMT'))
             ->format(DateTimeInterface::ATOM);

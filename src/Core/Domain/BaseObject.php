@@ -2,7 +2,7 @@
 
 namespace RakutenSDK\Core\Domain;
 
-use Cake\I18n\FrozenTime;
+use DateTime;
 use RakutenSDK\Core\Domain\Collection\BaseCollection;
 use RakutenSDK\Core\Utility\Functions;
 use ArrayIterator;
@@ -230,7 +230,7 @@ class BaseObject implements ArrayableInterface, IteratorAggregate
     public static function value(string $key, mixed $value): mixed
     {
         if (is_string($value) && in_array($key, self::$dateFields)) {
-            $value = new FrozenTime($value);
+            $value = new DateTime($value);
         } else {
             $dataTypes = static::getDataTypes();
             if (isset($dataTypes[$key])) {
