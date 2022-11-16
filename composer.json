@@ -7,7 +7,7 @@
     "api"
   ],
   "type": "library",
-  "version": "v1.0.0-dev",
+  "version": "v1.0.0-alpha",
   "license": "GPL-3.0-or-later",
   "authors": [
     {
